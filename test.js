@@ -1,0 +1,22 @@
+
+
+// var query = 'queryProductQuery($productId:String!){product(id:$productId){bopisEligiblecategories{namekey}clearancePromoMessagefinalsalePromoMessagecollectioncrossRelDetailMessagecrossRelProductURLEFOProductexpressProductTypefabricCarefabricDetailImages{captionimage}genderinternationalShippingAvailablelistPricemarketPlaceProductnamenewProductonlineExclusiveonlineExclusivePromoMsgpdpCrossSellHeaderproductDescription{typecontent}matchingSet{colorskus}productDetailproductFeaturesproductIdproductImageproductInventoryproductURLpromoMessagerecsAlgorithmoriginRecsAlgorithmsalePricetypebreadCrumbSummarybreadCrumbCategory{categoryNameh1CategoryNamelinks{relhref}breadCrumbCategory{categoryNameh1CategoryNamelinks{relhref}}}colorSlices{colorcolorFamilydefaultSliceipColorCodehasWaistAndInseamswatchURLimageMap{All{LARGEMAIN}Default{LARGEMAIN}Model1{LARGEMAIN}Model2{LARGEMAIN}Model3{LARGEMAIN}}mediaMap{main{urlsequenceId}large{urlsequenceId}modelInfo{sequenceIdlabelText}}onlineSkusskus{backOrderablebackOrderDatecategoryTypedisplayMSRPdisplayPriceextinseaminStoreInventoryCountinventoryMessageisFinalSaleisInStockOnlinemiraklOffer{minimumShippingPricesellerIdsellerName}marketPlaceSkuonClearanceonSaleonlineExclusiveonlineInventoryCountsizesizeNameskuId}}originRecs{listPricemarketPlaceProductnameproductIdproductImageproductURLsalePrice}relatedProducts{listPricemarketPlaceProductnameproductIdproductImageproductURLsalePricecolorSlices{colordefaultSlice}}storeTiericons{iconcategory}}}';
+//  // JSON stringified variables object
+//
+// var variables = JSON.stringify('{productId: \'id\'}'); // get rid of non-alphanumerics because IE doesn't like hashing them
+//
+// var stringToHash = (query + variables).replace(/\W/g, '');
+//
+// // var hash = sha_js('sha256').update(stringToHash, 'utf8').digest('hex');
+// console.log(stringToHash);
+function getStringToHash(productId) {
+  const query = 'queryProductQuery($productId:String!){product(id:$productId){bopisEligiblecategories{namekey}clearancePromoMessagefinalsalePromoMessagecollectioncrossRelDetailMessagecrossRelProductURLEFOProductexpressProductTypefabricCarefabricDetailImages{captionimage}genderinternationalShippingAvailablelistPricemarketPlaceProductnamenewProductonlineExclusiveonlineExclusivePromoMsgpdpCrossSellHeaderproductDescription{typecontent}matchingSet{colorskus}productDetailproductFeaturesproductIdproductImageproductInventoryproductURLpromoMessagerecsAlgorithmoriginRecsAlgorithmsalePricetypebreadCrumbSummarybreadCrumbCategory{categoryNameh1CategoryNamelinks{relhref}breadCrumbCategory{categoryNameh1CategoryNamelinks{relhref}}}colorSlices{colorcolorFamilydefaultSliceipColorCodehasWaistAndInseamswatchURLimageMap{All{LARGEMAIN}Default{LARGEMAIN}Model1{LARGEMAIN}Model2{LARGEMAIN}Model3{LARGEMAIN}}mediaMap{main{urlsequenceId}large{urlsequenceId}modelInfo{sequenceIdlabelText}}onlineSkusskus{backOrderablebackOrderDatecategoryTypedisplayMSRPdisplayPriceextinseaminStoreInventoryCountinventoryMessageisFinalSaleisInStockOnlinemiraklOffer{minimumShippingPricesellerIdsellerName}marketPlaceSkuonClearanceonSaleonlineExclusiveonlineInventoryCountsizesizeNameskuId}}originRecs{listPricemarketPlaceProductnameproductIdproductImageproductURLsalePrice}relatedProducts{listPricemarketPlaceProductnameproductIdproductImageproductURLsalePricecolorSlices{colordefaultSlice}}storeTiericons{iconcategory}}}';
+  const variables = JSON.stringify({ productId });
+  const stringToHash = (query + variables).replace(/\W/g, '');
+  return stringToHash;
+}
+
+// Example usage
+const productId = '06747392';
+const stringToHash = getStringToHash(productId);
+console.log(stringToHash);
